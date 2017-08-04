@@ -19,7 +19,6 @@ public class SpringbootdemoApplication {
 	}
 	
     /**
-     * s手动注册
      *
      * 使用代码注册Servlet（不需要@ServletComponentScan注解）
      * "/xs/*" servlet 请求匹配
@@ -36,13 +35,13 @@ public class SpringbootdemoApplication {
         return registration;
     }
     /**
-     * 手动注册
-     *
+     * 编码注册
+     * 
      * 使用代码注册Servlet（不需要@ServletComponentScan注解）
      * "/xs/*" servlet 请求匹配
      */
     @Bean
-    public ServletRegistrationBean registratMyServlet() {
+    public ServletRegistrationBean registratMyServlet( ) {
         return new ServletRegistrationBean(new MyServlet(), "/xs/*");// ServletName默认值为首字母小写，即myServlet
     }
 }
