@@ -2,6 +2,7 @@ package com.demo.springbootdemo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.demo.springbootdemo.interceptor.MyInterceptor1;
@@ -19,5 +20,11 @@ public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(new MyInterceptor2()).addPathPatterns("/**");
 		super.addInterceptors(registry);
 	}
+	
+	@Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //registry.addResourceHandler("/demo/**").addResourceLocations("classpath:/demo/");
+        super.addResourceHandlers(registry);
+    }
 
 }
