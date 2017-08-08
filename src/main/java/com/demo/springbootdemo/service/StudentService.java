@@ -18,8 +18,7 @@ public class StudentService {
 
 	    public List<Student> getList(){
 	        String sql = "SELECT ID,NAME,SCORE_SUM,SCORE_AVG, AGE   FROM STUDENT";
-	        return (List<Student>) jdbcTemplate.query(sql, new RowMapper<Student>(){
-
+	        List<Student> list= (List<Student>) jdbcTemplate.query(sql, new RowMapper<Student>(){
 	            @Override
 	            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
 	                Student stu = new Student();
@@ -30,7 +29,7 @@ public class StudentService {
 	                stu.setAvgScore(rs.getString("SCORE_AVG"));
 	                return stu;
 	            }
-
 	        });
+	        return list;
 	    }
 }

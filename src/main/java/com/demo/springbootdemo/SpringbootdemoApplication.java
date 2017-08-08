@@ -26,14 +26,14 @@ public class SpringbootdemoApplication {
      * 修改DispatcherServlet默认配置
      * Spring boot 的主 Servlet 为 DispatcherServlet，其默认的url-pattern为“/”
      */
-    @Bean
-    public ServletRegistrationBean servletRegistrationBean(DispatcherServlet dispatcherServlet) {
-        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet);
-        registration.getUrlMappings().clear();
-        registration.addUrlMappings("*.do");
-        registration.addUrlMappings("*.json");
-        return registration;
-    }
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean(DispatcherServlet dispatcherServlet) {
+//        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet);
+//        registration.getUrlMappings().clear();
+//        registration.addUrlMappings("*.do");
+//        registration.addUrlMappings("*.json");
+//        return registration;
+//    }
     /**
      * 编码注册
      * 

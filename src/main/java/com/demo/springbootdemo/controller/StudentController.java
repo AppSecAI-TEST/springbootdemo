@@ -22,6 +22,7 @@ public class StudentController {
     @RequestMapping("/list")
     public List<Student> getStus(){
         logger.info("从数据库读取Student集合");
-        return studentService.getList();
+        List<Student> list=studentService.getList();
+        return list;
     }
 }
